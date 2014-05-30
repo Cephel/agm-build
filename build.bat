@@ -13,5 +13,4 @@ CD %source%
 IF NOT EXIST %destination% MKDIR %destination%
 IF NOT EXIST %destination%\addons MKDIR %destination%\addons
 FOR /D %%G in ("AGM_*") DO "%builder%" "%source%\%%G" "%destination%\addons" -PACK -CLEAR
-
 PAUSE
