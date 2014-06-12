@@ -1,16 +1,17 @@
-:: SETUP ::
+@echo off
+
+:: Setup ::
 :: Put the location of your AddonBuilder.exe here ::
-SET builder=D:\Games\Steam\SteamApps\common\Arma 3 Tools\AddonBuilder.exe
+set builder=D:\Games\Steam\SteamApps\common\Arma 3 Tools\AddonBuilder.exe
 
 :: Put the source of the Project here ( where the AGM_ folders are ) ::
-SET source=D:\Documents\Projects\AGM
+set source=D:\Documents\Projects\AGM
 
 :: Put the place where you want the pbos to land here ::
-SET destination=D:\Documents\Projects\agm-build\@AGM
+set destination=D:\Documents\Projects\agm-build\build
 
 :: DON'T TOUCH ME ::
-CD %source%
-IF NOT EXIST %destination% MKDIR %destination%
-IF NOT EXIST %destination%\addons MKDIR %destination%\addons
-FOR /D %%G in ("AGM_*") DO "%builder%" "%source%\%%G" "%destination%\addons" -PACK -CLEAR
-PAUSE
+cd %source%
+if not exist "%destination%" mkdir "%destination%"
+for /d %%G in ("AGM_*") do "%builder%" "%source%\%%G" "%destination%" -project="%source%" -packonly -clear
+pause
