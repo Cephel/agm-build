@@ -13,5 +13,5 @@ set destination=D:\Documents\Projects\agm-build\build
 :: DON'T TOUCH ME ::
 cd %source%
 if not exist "%destination%" mkdir "%destination%"
-for /d %%G in ("AGM_*") do "%builder%" "%source%\%%G" "%destination%" -project="%source%" -packonly -clear
+for /d %%G in ("AGM_*") do "%builder%" "%source%\%%G" "%destination%" -project="%source%" -clear
 pause
